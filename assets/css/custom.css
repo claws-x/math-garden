@@ -1,0 +1,424 @@
+/* ============================================================
+   全局基础
+   ============================================================ */
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, sans-serif;
+  font-weight: 400;
+  color: #2c2c2a;
+  background-color: #fafaf8;
+  line-height: 1.8;
+}
+
+a {
+  color: #1a6b3a;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================================
+   导航栏
+   ============================================================ */
+
+.site-header,
+header.site-header {
+  border-bottom: 0.5px solid rgba(0,0,0,0.1);
+  background: #fafaf8;
+  padding: 1rem 1.5rem;
+}
+
+.site-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a18 !important;
+  letter-spacing: 0.02em;
+}
+
+/* 导航链接 */
+.site-nav a,
+nav a {
+  font-size: 13px;
+  color: #5f5e5a;
+  margin-left: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.site-nav a:hover,
+nav a:hover {
+  color: #1a6b3a;
+  text-decoration: none;
+}
+
+/* ============================================================
+   首页 Hero 区域
+   ============================================================ */
+
+.home-hero {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  margin-bottom: 2.5rem;
+}
+
+.home-hero .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a6b3a;
+  margin-bottom: 0.6rem;
+}
+
+.home-hero h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  color: #1a1a18;
+}
+
+.home-hero .description {
+  font-size: 14px;
+  color: #5f5e5a;
+  max-width: 540px;
+  line-height: 1.9;
+}
+
+/* 首页展示公式 */
+.hero-formula {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1rem;
+  background: #f1efe8;
+  border-left: 2px solid #1a6b3a;
+  border-radius: 0 6px 6px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #3b3b39;
+}
+
+/* ============================================================
+   分类卡片（首页）
+   ============================================================ */
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 2.5rem;
+}
+
+.category-card {
+  background: #ffffff;
+  border: 0.5px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  transition: border-color 0.15s;
+}
+
+.category-card:hover {
+  border-color: rgba(0,0,0,0.2);
+}
+
+.category-card .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-bottom: 0.7rem;
+}
+
+.dot-green  { background: #1a6b3a; }
+.dot-blue   { background: #185fa5; }
+.dot-amber  { background: #ba7517; }
+
+.category-card h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #1a1a18;
+}
+
+.category-card p {
+  font-size: 11px;
+  color: #888780;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================================
+   文章列表
+   ============================================================ */
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888780;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: rgba(0,0,0,0.1);
+}
+
+/* 文章条目 */
+.post-list,
+ul.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-list li,
+.post-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  align-items: flex-start;
+}
+
+.post-list li:first-child,
+.post-item:first-child {
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+}
+
+/* 日期列 */
+.post-date,
+.post-meta time {
+  font-size: 11px;
+  color: #888780;
+  min-width: 72px;
+  padding-top: 2px;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+/* 标签 pill */
+.post-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.04em;
+}
+
+.tag-unsolved { background: #faeeda; color: #854f0b; }
+.tag-number   { background: #e1f5ee; color: #0f6e56; }
+.tag-analysis { background: #e6f1fb; color: #185fa5; }
+
+/* 文章标题（列表中） */
+.post-list h3,
+.post-list .post-title,
+.post-item h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  line-height: 1.5;
+  color: #1a1a18;
+}
+
+.post-list h3 a,
+.post-item h3 a {
+  color: inherit;
+}
+
+.post-list h3 a:hover,
+.post-item h3 a:hover {
+  color: #1a6b3a;
+  text-decoration: none;
+}
+
+/* 摘要 */
+.post-excerpt,
+.post-list .excerpt {
+  font-size: 12px;
+  color: #5f5e5a;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================================
+   文章详情页
+   ============================================================ */
+
+/* 顶部分类 + 标题 */
+.post-header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+}
+
+.post-category-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a6b3a;
+  margin-bottom: 0.5rem;
+}
+
+.post h1,
+.post-title-main {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #1a1a18;
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  font-size: 12px;
+  color: #888780;
+}
+
+/* 正文 */
+.post-content {
+  font-size: 15px;
+  line-height: 1.95;
+  color: #3b3b39;
+}
+
+.post-content h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 2rem 0 0.8rem;
+  color: #1a1a18;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  padding-bottom: 0.4rem;
+}
+
+.post-content h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 1.5rem 0 0.6rem;
+  color: #1a1a18;
+}
+
+.post-content p {
+  margin-bottom: 1.1rem;
+}
+
+/* ============================================================
+   公式块（数学内容核心样式）
+   ============================================================ */
+
+/* 行内公式 */
+.post-content code,
+code {
+  font-family: 'Courier New', 'Menlo', monospace;
+  font-size: 13px;
+  background: #f1efe8;
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: #3b3b39;
+}
+
+/* 块级公式 / 代码块 */
+.post-content pre,
+pre {
+  background: #f7f6f2;
+  border: 0.5px solid rgba(0,0,0,0.08);
+  border-left: 2px solid #1a6b3a;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.2rem;
+  font-family: 'Courier New', 'Menlo', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+}
+
+/* MathJax / KaTeX 公式展示块 */
+.math-block,
+.MathJax_Display,
+mjx-container[display="true"] {
+  text-align: center;
+  background: #f7f6f2;
+  border: 0.5px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+/* 公式标注 */
+.formula-caption {
+  text-align: center;
+  font-size: 11px;
+  color: #888780;
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   引用块
+   ============================================================ */
+
+.post-content blockquote {
+  border-left: 2px solid #1a6b3a;
+  margin: 1.5rem 0;
+  padding: 0.8rem 1.2rem;
+  background: #f1f5f0;
+  border-radius: 0 6px 6px 0;
+  color: #3b6d11;
+  font-size: 14px;
+}
+
+/* ============================================================
+   页脚
+   ============================================================ */
+
+.site-footer {
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #888780;
+  margin-top: 3rem;
+  background: #fafaf8;
+}
+
+.footer-quote {
+  font-style: italic;
+}
+
+/* ============================================================
+   响应式：移动端
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero h1 {
+    font-size: 22px;
+  }
+
+  .post-list li,
+  .post-item {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

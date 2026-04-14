@@ -6,6 +6,10 @@
   <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
   {% if site.mathjax %}
   <script>
     MathJax = {
@@ -29,6 +33,39 @@
 
   <main class="page-content">
     <div class="wrapper">
+      <!-- Hero 区域 -->
+      <div class="home-hero">
+        <div class="eyebrow">数学学习笔记 · 留给孩子们的数字资产</div>
+        <h1>知识像花园一样<br>成长、绽放</h1>
+        <p class="description">
+          记录数论、分析与未解问题的探索历程，把复杂的数学主题整理成清晰、可持续阅读的内容。
+        </p>
+        <div class="hero-formula">ζ(s) = Σ n⁻ˢ &nbsp;·&nbsp; 黎曼猜想：Re(s) = ½ ?</div>
+      </div>
+
+      <!-- 分类卡片 -->
+      <div class="section-label">探索领域</div>
+      <div class="categories-grid">
+        <div class="category-card">
+          <div class="dot dot-green"></div>
+          <h3>数论</h3>
+          <p>素数、黎曼猜想、哥德巴赫猜想</p>
+        </div>
+        <div class="category-card">
+          <div class="dot dot-blue"></div>
+          <h3>分析</h3>
+          <p>实分析、复分析、泛函分析</p>
+        </div>
+        <div class="category-card">
+          <div class="dot dot-amber"></div>
+          <h3>未解问题</h3>
+          <p>千禧年难题、著名猜想、开放问题</p>
+        </div>
+      </div>
+
+      <!-- 文章列表标题 -->
+      <div class="section-label">最新文章</div>
+
       {{ content }}
     </div>
   </main>
