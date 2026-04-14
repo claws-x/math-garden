@@ -5,12 +5,20 @@ layout: default
 <article class="post">
   <div class="post-header">
     <div class="post-category-label">
-      {{ page.categories | join: ' · ' | default: '数学笔记' }}
+      {% assign cat = page.categories | first %}
+      {% if cat == 'number-theory' %}数论
+      {% elsif cat == 'analysis' %}分析
+      {% elsif cat == '问题卡片' %}问题卡片
+      {% else %}{{ cat | default: '数学笔记' }}{% endif %}
+      {% if page.subtitle %} · {{ page.subtitle }}{% endif %}
     </div>
     <h1 class="post-title-main">{{ page.title }}</h1>
     <div class="post-meta">{{ page.date | date: "%Y年%m月%d日" }} · Graham</div>
   </div>
   <div class="post-content">
     {{ content }}
+  </div>
+  <div class="post-nav">
+    <a href="{{ '/' | relative_url }}" class="back-link">← 返回首页</a>
   </div>
 </article>

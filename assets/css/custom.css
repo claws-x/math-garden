@@ -1,14 +1,10 @@
 /* ============================================================
    Graham 的数学花园 · custom.css
-   加载顺序：在 main.css 之后，覆盖默认样式
    ============================================================ */
 
-/* ============================================================
-   全局基础
-   ============================================================ */
-
+/* ---- 全局 ---- */
 body {
-  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
   font-weight: 400;
   color: #2c2c2a;
   background-color: #fafaf8;
@@ -27,12 +23,9 @@ a:hover {
   text-underline-offset: 3px;
 }
 
-/* ============================================================
-   导航栏
-   ============================================================ */
-
+/* ---- 导航 ---- */
 .site-header {
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0.5px solid rgba(0,0,0,0.1);
   background: #fafaf8;
   padding: 0;
   margin-bottom: 0;
@@ -43,6 +36,8 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 1.1rem 1rem;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .site-title {
@@ -77,26 +72,22 @@ a:hover {
   text-decoration: none;
 }
 
-/* ============================================================
-   页面主体
-   ============================================================ */
-
+/* ---- 页面主体 ---- */
 .page-content {
   padding: 0;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 160px);
 }
 
 .page-content .wrapper {
+  max-width: 860px;
+  margin: 0 auto;
   padding: 2rem 1rem 3rem;
 }
 
-/* ============================================================
-   首页 Hero
-   ============================================================ */
-
+/* ---- 首页 Hero ---- */
 .home-hero {
-  padding: 2rem 0 2rem;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  padding: 2rem 0 2.2rem;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
   margin-bottom: 2.5rem;
 }
 
@@ -137,10 +128,7 @@ a:hover {
   letter-spacing: 0.03em;
 }
 
-/* ============================================================
-   分类卡片
-   ============================================================ */
-
+/* ---- 分区标签 ---- */
 .section-label {
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -156,9 +144,10 @@ a:hover {
   content: '';
   flex: 1;
   height: 0.5px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0,0,0,0.1);
 }
 
+/* ---- 分类卡片 ---- */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -167,8 +156,8 @@ a:hover {
 }
 
 .category-card {
-  background: #ffffff;
-  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border: 0.5px solid rgba(0,0,0,0.1);
   border-radius: 12px;
   padding: 1rem 1.1rem;
   display: block;
@@ -177,7 +166,7 @@ a:hover {
 }
 
 .category-card:hover {
-  border-color: rgba(0, 0, 0, 0.22);
+  border-color: rgba(0,0,0,0.22);
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -189,9 +178,9 @@ a:hover {
   margin-bottom: 0.7rem;
 }
 
-.dot-green  { background: #1a6b3a; }
-.dot-blue   { background: #185fa5; }
-.dot-amber  { background: #ba7517; }
+.dot-green { background: #1a6b3a; }
+.dot-blue  { background: #185fa5; }
+.dot-amber { background: #ba7517; }
 
 .category-card h3 {
   font-size: 13px;
@@ -207,10 +196,7 @@ a:hover {
   margin: 0;
 }
 
-/* ============================================================
-   文章列表
-   ============================================================ */
-
+/* ---- 文章列表 ---- */
 .post-list {
   list-style: none;
   padding: 0;
@@ -221,22 +207,25 @@ a:hover {
   display: flex;
   gap: 1rem;
   padding: 0.9rem 0;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
   align-items: flex-start;
 }
 
 .post-list li:first-child {
-  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-top: 0.5px solid rgba(0,0,0,0.08);
 }
 
 .post-list .post-date {
   font-size: 11px;
   color: #888780;
-  min-width: 52px;
+  min-width: 50px;
   padding-top: 3px;
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
-  line-height: 1.5;
+}
+
+.post-list .post-body {
+  flex: 1;
 }
 
 .post-tag {
@@ -256,9 +245,8 @@ a:hover {
 .post-list h3 {
   font-size: 14px;
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 0.15rem;
   line-height: 1.5;
-  color: #1a1a18;
 }
 
 .post-list h3 a {
@@ -271,19 +259,23 @@ a:hover {
   text-decoration: none;
 }
 
-/* ============================================================
-   文章详情页头部
-   ============================================================ */
+.post-excerpt {
+  font-size: 12px;
+  color: #888780;
+  margin: 0;
+  line-height: 1.6;
+}
 
+/* ---- 文章详情页头部 ---- */
 .post-header {
   padding-bottom: 1.4rem;
   margin-bottom: 1.8rem;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0.5px solid rgba(0,0,0,0.1);
 }
 
 .post-category-label {
   font-size: 11px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #1a6b3a;
   margin-bottom: 0.5rem;
@@ -303,28 +295,25 @@ a:hover {
   color: #888780;
 }
 
-/* ============================================================
-   文章正文
-   ============================================================ */
-
+/* ---- 文章正文 ---- */
 .post-content {
   font-size: 15px;
   line-height: 1.95;
   color: #3b3b39;
 }
 
-/* 隐藏正文中与 layout 重复的第一个 H1 */
+/* 隐藏正文里与 layout 重复的第一个 H1 */
 .post-content > h1:first-child {
   display: none;
 }
 
 .post-content h1 {
   font-family: 'Noto Serif SC', serif;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 600;
   margin: 2.2rem 0 0.8rem;
   color: #1a1a18;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
   padding-bottom: 0.4rem;
 }
 
@@ -334,7 +323,7 @@ a:hover {
   font-weight: 600;
   margin: 2rem 0 0.7rem;
   color: #1a1a18;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
   padding-bottom: 0.35rem;
 }
 
@@ -374,14 +363,11 @@ a:hover {
 
 .post-content hr {
   border: none;
-  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-top: 0.5px solid rgba(0,0,0,0.1);
   margin: 2rem 0;
 }
 
-/* ============================================================
-   表格
-   ============================================================ */
-
+/* ---- 表格 ---- */
 .post-content table {
   width: 100%;
   border-collapse: collapse;
@@ -396,13 +382,13 @@ a:hover {
   font-weight: 500;
   padding: 0.5rem 0.9rem;
   text-align: left;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0,0,0,0.12);
   white-space: nowrap;
 }
 
 .post-content td {
   padding: 0.45rem 0.9rem;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 0.5px solid rgba(0,0,0,0.07);
   vertical-align: top;
 }
 
@@ -410,12 +396,9 @@ a:hover {
   background: #f7f6f2;
 }
 
-/* ============================================================
-   代码与公式
-   ============================================================ */
-
+/* ---- 代码与公式 ---- */
 code {
-  font-family: 'Courier New', 'Menlo', 'Monaco', monospace;
+  font-family: 'Courier New', 'Menlo', monospace;
   font-size: 13px;
   background: #f1efe8;
   padding: 1px 5px;
@@ -425,7 +408,7 @@ code {
 
 pre {
   background: #f7f6f2;
-  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border: 0.5px solid rgba(0,0,0,0.08);
   border-left: 2px solid #1a6b3a;
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.2rem;
@@ -442,20 +425,16 @@ pre code {
   font-size: inherit;
 }
 
-/* MathJax 块级公式 */
 mjx-container[display="true"] {
   background: #f7f6f2;
-  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border: 0.5px solid rgba(0,0,0,0.08);
   border-radius: 8px;
   padding: 1rem;
   margin: 1.5rem 0 !important;
   overflow-x: auto;
 }
 
-/* ============================================================
-   引用块
-   ============================================================ */
-
+/* ---- 引用 ---- */
 .post-content blockquote {
   border-left: 2px solid #1a6b3a;
   margin: 1.5rem 0;
@@ -466,22 +445,139 @@ mjx-container[display="true"] {
   font-size: 14px;
 }
 
-.post-content blockquote p {
+.post-content blockquote p { margin: 0; }
+
+/* ---- 返回链接 ---- */
+.post-nav {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+}
+
+.back-link {
+  font-size: 13px;
+  color: #888780;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #1a6b3a;
+  text-decoration: none;
+}
+
+/* ---- 归档页 ---- */
+.page-header-simple {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+}
+
+.page-header-simple h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a18;
   margin: 0;
 }
 
-/* ============================================================
-   页脚
-   ============================================================ */
+.archive-year {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a18;
+  margin: 2rem 0 0.8rem;
+}
 
+.archive-posts {
+  margin-bottom: 1rem;
+}
+
+.archive-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0;
+  border-bottom: 0.5px solid rgba(0,0,0,0.06);
+}
+
+.archive-item time {
+  font-size: 11px;
+  color: #888780;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  min-width: 36px;
+}
+
+.archive-item a {
+  font-size: 14px;
+  color: #1a1a18;
+  text-decoration: none;
+}
+
+.archive-item a:hover {
+  color: #1a6b3a;
+  text-decoration: none;
+}
+
+/* ---- 关于页 ---- */
+.about-content {
+  max-width: 640px;
+}
+
+.about-content h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a18;
+  margin: 2rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+}
+
+.about-content p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #3b3b39;
+  margin: 0 0 1rem;
+}
+
+.about-content ul, .about-content ol {
+  padding-left: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.about-content li {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3b3b39;
+  margin-bottom: 0.3rem;
+}
+
+.about-content strong {
+  font-weight: 500;
+  color: #1a1a18;
+}
+
+.footer-note {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+  color: #888780;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* ---- 页脚 ---- */
 .site-footer {
-  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-top: 0.5px solid rgba(0,0,0,0.08);
   background: #fafaf8;
   padding: 1.5rem 0;
   margin-top: 0;
 }
 
 .site-footer .wrapper {
+  max-width: 860px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -490,47 +586,16 @@ mjx-container[display="true"] {
   padding: 0 1rem;
 }
 
-.footer-quote {
-  font-style: italic;
-}
+.footer-quote { font-style: italic; }
 
-/* ============================================================
-   响应式
-   ============================================================ */
-
+/* ---- 响应式 ---- */
 @media (max-width: 640px) {
-  .site-header .wrapper {
-    padding: 0.8rem 1rem;
-  }
-
-  .home-hero h1 {
-    font-size: 22px;
-  }
-
-  .categories-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .post-list li {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .post-list .post-date {
-    min-width: auto;
-  }
-
-  .site-footer .wrapper {
-    flex-direction: column;
-    gap: 0.4rem;
-    text-align: center;
-  }
-
-  .post-title-main {
-    font-size: 19px;
-  }
-
-  .post-content {
-    font-size: 14px;
-  }
+  .site-header .wrapper { padding: 0.8rem 1rem; }
+  .home-hero h1 { font-size: 22px; }
+  .categories-grid { grid-template-columns: 1fr; }
+  .post-list li { flex-direction: column; gap: 0.2rem; }
+  .site-footer .wrapper { flex-direction: column; gap: 0.4rem; text-align: center; }
+  .post-title-main { font-size: 19px; }
+  .post-content { font-size: 14px; }
+  .archive-item { flex-wrap: wrap; }
 }

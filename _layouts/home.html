@@ -2,17 +2,13 @@
 layout: default
 ---
 
-<!-- Hero 区域 -->
 <div class="home-hero">
   <div class="eyebrow">数学学习笔记 · 留给孩子们的数字资产</div>
   <h1>知识像花园一样<br>成长、绽放</h1>
-  <p class="description">
-    记录数论、分析与未解问题的探索历程，把复杂的数学主题整理成清晰、可持续阅读的内容。
-  </p>
+  <p class="description">记录数论、分析与未解问题的探索历程，把复杂的数学主题整理成清晰、可持续阅读的内容。</p>
   <div class="hero-formula">ζ(s) = Σ n⁻ˢ &nbsp;·&nbsp; 黎曼猜想：Re(s) = ½ ?</div>
 </div>
 
-<!-- 分类卡片 -->
 <div class="section-label">探索领域</div>
 <div class="categories-grid">
   <a class="category-card" href="{{ '/archive/' | relative_url }}?category=number-theory">
@@ -25,20 +21,19 @@ layout: default
     <h3>分析</h3>
     <p>实分析、复分析、泛函分析</p>
   </a>
-  <a class="category-card" href="{{ '/archive/' | relative_url }}?category=unsolved">
+  <a class="category-card" href="{{ '/archive/' | relative_url }}">
     <div class="dot dot-amber"></div>
     <h3>未解问题</h3>
     <p>千禧年难题、著名猜想、开放问题</p>
   </a>
 </div>
 
-<!-- 最新文章 -->
 <div class="section-label">最新文章</div>
 <ul class="post-list">
-  {% for post in site.posts limit:10 %}
+  {% for post in site.posts limit:15 %}
   <li>
     <span class="post-date">{{ post.date | date: "%m / %d" }}</span>
-    <div>
+    <div class="post-body">
       {% assign cat = post.categories | first %}
       {% if cat == 'number-theory' %}
         <span class="post-tag tag-number">数论</span>
@@ -48,6 +43,7 @@ layout: default
         <span class="post-tag tag-unsolved">未解问题</span>
       {% endif %}
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      {% if post.subtitle %}<p class="post-excerpt">{{ post.subtitle }}</p>{% endif %}
     </div>
   </li>
   {% endfor %}

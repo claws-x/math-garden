@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 
-  {% if site.mathjax %}
+  {% if page.mathjax or site.mathjax %}
   <script>
     MathJax = {
       tex: {
