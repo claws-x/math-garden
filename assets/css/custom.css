@@ -1,21 +1,28 @@
 /* ============================================================
+   Graham 的数学花园 · custom.css
+   加载顺序：在 main.css 之后，覆盖默认样式
+   ============================================================ */
+
+/* ============================================================
    全局基础
    ============================================================ */
 
 body {
-  font-family: 'Noto Sans SC', -apple-system, sans-serif;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
   font-weight: 400;
   color: #2c2c2a;
   background-color: #fafaf8;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 a {
   color: #1a6b3a;
   text-decoration: none;
+  transition: color 0.15s;
 }
 
 a:hover {
+  color: #0f5029;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -24,43 +31,72 @@ a:hover {
    导航栏
    ============================================================ */
 
-.site-header,
-header.site-header {
-  border-bottom: 0.5px solid rgba(0,0,0,0.1);
+.site-header {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
   background: #fafaf8;
-  padding: 1rem 1.5rem;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1rem;
 }
 
 .site-title {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 18px;
-  font-weight: 600;
+  font-family: 'Noto Serif SC', Georgia, serif;
+  font-size: 17px !important;
+  font-weight: 600 !important;
   color: #1a1a18 !important;
   letter-spacing: 0.02em;
+  text-decoration: none !important;
 }
 
-/* 导航链接 */
-.site-nav a,
-nav a {
+.site-title:hover {
+  color: #1a6b3a !important;
+  text-decoration: none !important;
+}
+
+.site-nav {
+  display: flex;
+  gap: 0;
+}
+
+.site-nav a {
   font-size: 13px;
   color: #5f5e5a;
   margin-left: 1.5rem;
   letter-spacing: 0.02em;
+  text-decoration: none;
 }
 
-.site-nav a:hover,
-nav a:hover {
+.site-nav a:hover {
   color: #1a6b3a;
   text-decoration: none;
 }
 
 /* ============================================================
-   首页 Hero 区域
+   页面主体
+   ============================================================ */
+
+.page-content {
+  padding: 0;
+  min-height: calc(100vh - 200px);
+}
+
+.page-content .wrapper {
+  padding: 2rem 1rem 3rem;
+}
+
+/* ============================================================
+   首页 Hero
    ============================================================ */
 
 .home-hero {
-  padding: 2.5rem 0 2rem;
-  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  padding: 2rem 0 2rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
   margin-bottom: 2.5rem;
 }
 
@@ -74,36 +110,54 @@ nav a:hover {
 
 .home-hero h1 {
   font-family: 'Noto Serif SC', serif;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: 0.8rem;
+  margin: 0 0 0.8rem;
   color: #1a1a18;
 }
 
 .home-hero .description {
   font-size: 14px;
   color: #5f5e5a;
-  max-width: 540px;
+  max-width: 520px;
   line-height: 1.9;
+  margin: 0 0 1.2rem;
 }
 
-/* 首页展示公式 */
 .hero-formula {
   display: inline-block;
-  margin-top: 1.2rem;
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 1rem;
   background: #f1efe8;
   border-left: 2px solid #1a6b3a;
   border-radius: 0 6px 6px 0;
-  font-family: 'Courier New', monospace;
+  font-family: 'Courier New', 'Menlo', monospace;
   font-size: 13px;
   color: #3b3b39;
+  letter-spacing: 0.03em;
 }
 
 /* ============================================================
-   分类卡片（首页）
+   分类卡片
    ============================================================ */
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888780;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: rgba(0, 0, 0, 0.1);
+}
 
 .categories-grid {
   display: grid;
@@ -114,14 +168,18 @@ nav a:hover {
 
 .category-card {
   background: #ffffff;
-  border: 0.5px solid rgba(0,0,0,0.1);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 1rem 1.1rem;
-  transition: border-color 0.15s;
+  display: block;
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.1s;
 }
 
 .category-card:hover {
-  border-color: rgba(0,0,0,0.2);
+  border-color: rgba(0, 0, 0, 0.22);
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .category-card .dot {
@@ -138,7 +196,7 @@ nav a:hover {
 .category-card h3 {
   font-size: 13px;
   font-weight: 500;
-  margin-bottom: 0.3rem;
+  margin: 0 0 0.3rem;
   color: #1a1a18;
 }
 
@@ -153,58 +211,34 @@ nav a:hover {
    文章列表
    ============================================================ */
 
-.section-label {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #888780;
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.section-label::after {
-  content: '';
-  flex: 1;
-  height: 0.5px;
-  background: rgba(0,0,0,0.1);
-}
-
-/* 文章条目 */
-.post-list,
-ul.post-list {
+.post-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.post-list li,
-.post-item {
+.post-list li {
   display: flex;
   gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  padding: 0.9rem 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
   align-items: flex-start;
 }
 
-.post-list li:first-child,
-.post-item:first-child {
-  border-top: 0.5px solid rgba(0,0,0,0.08);
+.post-list li:first-child {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
 }
 
-/* 日期列 */
-.post-date,
-.post-meta time {
+.post-list .post-date {
   font-size: 11px;
   color: #888780;
-  min-width: 72px;
-  padding-top: 2px;
+  min-width: 52px;
+  padding-top: 3px;
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
+  line-height: 1.5;
 }
 
-/* 标签 pill */
 .post-tag {
   display: inline-block;
   font-size: 10px;
@@ -212,52 +246,39 @@ ul.post-list {
   border-radius: 3px;
   margin-bottom: 0.3rem;
   letter-spacing: 0.04em;
+  line-height: 1.6;
 }
 
 .tag-unsolved { background: #faeeda; color: #854f0b; }
 .tag-number   { background: #e1f5ee; color: #0f6e56; }
 .tag-analysis { background: #e6f1fb; color: #185fa5; }
 
-/* 文章标题（列表中） */
-.post-list h3,
-.post-list .post-title,
-.post-item h3 {
+.post-list h3 {
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 0.2rem;
+  margin: 0;
   line-height: 1.5;
   color: #1a1a18;
 }
 
-.post-list h3 a,
-.post-item h3 a {
-  color: inherit;
+.post-list h3 a {
+  color: #1a1a18;
+  text-decoration: none;
 }
 
-.post-list h3 a:hover,
-.post-item h3 a:hover {
+.post-list h3 a:hover {
   color: #1a6b3a;
   text-decoration: none;
 }
 
-/* 摘要 */
-.post-excerpt,
-.post-list .excerpt {
-  font-size: 12px;
-  color: #5f5e5a;
-  line-height: 1.7;
-  margin: 0;
-}
-
 /* ============================================================
-   文章详情页
+   文章详情页头部
    ============================================================ */
 
-/* 顶部分类 + 标题 */
 .post-header {
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  padding-bottom: 1.4rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
 }
 
 .post-category-label {
@@ -268,14 +289,13 @@ ul.post-list {
   margin-bottom: 0.5rem;
 }
 
-.post h1,
 .post-title-main {
   font-family: 'Noto Serif SC', serif;
   font-size: 22px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.55;
   color: #1a1a18;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
 }
 
 .post-meta {
@@ -283,42 +303,119 @@ ul.post-list {
   color: #888780;
 }
 
-/* 正文 */
+/* ============================================================
+   文章正文
+   ============================================================ */
+
 .post-content {
   font-size: 15px;
   line-height: 1.95;
   color: #3b3b39;
 }
 
+/* 隐藏正文中与 layout 重复的第一个 H1 */
+.post-content > h1:first-child {
+  display: none;
+}
+
+.post-content h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 2.2rem 0 0.8rem;
+  color: #1a1a18;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 0.4rem;
+}
+
 .post-content h2 {
   font-family: 'Noto Serif SC', serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  margin: 2rem 0 0.8rem;
+  margin: 2rem 0 0.7rem;
   color: #1a1a18;
-  border-bottom: 0.5px solid rgba(0,0,0,0.08);
-  padding-bottom: 0.4rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 0.35rem;
 }
 
 .post-content h3 {
   font-size: 15px;
   font-weight: 500;
-  margin: 1.5rem 0 0.6rem;
+  margin: 1.5rem 0 0.5rem;
   color: #1a1a18;
 }
 
+.post-content h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 1.2rem 0 0.4rem;
+  color: #3b3b39;
+}
+
 .post-content p {
-  margin-bottom: 1.1rem;
+  margin: 0 0 1rem;
+}
+
+.post-content ul,
+.post-content ol {
+  padding-left: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.post-content li {
+  margin-bottom: 0.35rem;
+  line-height: 1.8;
+}
+
+.post-content strong {
+  font-weight: 500;
+  color: #1a1a18;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
 }
 
 /* ============================================================
-   公式块（数学内容核心样式）
+   表格
    ============================================================ */
 
-/* 行内公式 */
-.post-content code,
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 1.2rem 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.post-content th {
+  background: #f1efe8;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+}
+
+.post-content td {
+  padding: 0.45rem 0.9rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.07);
+  vertical-align: top;
+}
+
+.post-content tbody tr:hover td {
+  background: #f7f6f2;
+}
+
+/* ============================================================
+   代码与公式
+   ============================================================ */
+
 code {
-  font-family: 'Courier New', 'Menlo', monospace;
+  font-family: 'Courier New', 'Menlo', 'Monaco', monospace;
   font-size: 13px;
   background: #f1efe8;
   padding: 1px 5px;
@@ -326,41 +423,33 @@ code {
   color: #3b3b39;
 }
 
-/* 块级公式 / 代码块 */
-.post-content pre,
 pre {
   background: #f7f6f2;
-  border: 0.5px solid rgba(0,0,0,0.08);
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
   border-left: 2px solid #1a6b3a;
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.2rem;
-  font-family: 'Courier New', 'Menlo', monospace;
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.75;
   overflow-x: auto;
   margin: 1.2rem 0;
 }
 
-/* MathJax / KaTeX 公式展示块 */
-.math-block,
-.MathJax_Display,
-mjx-container[display="true"] {
-  text-align: center;
-  background: #f7f6f2;
-  border: 0.5px solid rgba(0,0,0,0.08);
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 1.5rem 0;
-  overflow-x: auto;
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
 }
 
-/* 公式标注 */
-.formula-caption {
-  text-align: center;
-  font-size: 11px;
-  color: #888780;
-  margin-top: 0.4rem;
-  font-style: italic;
+/* MathJax 块级公式 */
+mjx-container[display="true"] {
+  background: #f7f6f2;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0 !important;
+  overflow-x: auto;
 }
 
 /* ============================================================
@@ -377,20 +466,28 @@ mjx-container[display="true"] {
   font-size: 14px;
 }
 
+.post-content blockquote p {
+  margin: 0;
+}
+
 /* ============================================================
    页脚
    ============================================================ */
 
 .site-footer {
-  border-top: 0.5px solid rgba(0,0,0,0.08);
-  padding: 1.5rem;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+  background: #fafaf8;
+  padding: 1.5rem 0;
+  margin-top: 0;
+}
+
+.site-footer .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
   color: #888780;
-  margin-top: 3rem;
-  background: #fafaf8;
+  padding: 0 1rem;
 }
 
 .footer-quote {
@@ -398,27 +495,42 @@ mjx-container[display="true"] {
 }
 
 /* ============================================================
-   响应式：移动端
+   响应式
    ============================================================ */
 
 @media (max-width: 640px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
+  .site-header .wrapper {
+    padding: 0.8rem 1rem;
   }
 
   .home-hero h1 {
     font-size: 22px;
   }
 
-  .post-list li,
-  .post-item {
-    flex-direction: column;
-    gap: 0.3rem;
+  .categories-grid {
+    grid-template-columns: 1fr;
   }
 
-  .site-footer {
+  .post-list li {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.2rem;
+  }
+
+  .post-list .post-date {
+    min-width: auto;
+  }
+
+  .site-footer .wrapper {
+    flex-direction: column;
+    gap: 0.4rem;
     text-align: center;
+  }
+
+  .post-title-main {
+    font-size: 19px;
+  }
+
+  .post-content {
+    font-size: 14px;
   }
 }
